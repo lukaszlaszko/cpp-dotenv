@@ -4,7 +4,7 @@
 #include "antlr4-runtime.h"
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class TreeDecorations
     {

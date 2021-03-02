@@ -5,7 +5,7 @@
 #include <string>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class ReplaceOperation
     {

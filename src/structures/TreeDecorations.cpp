@@ -1,7 +1,7 @@
 #include "TreeDecorations.h"
 
 
-using namespace dotenv;
+using namespace cppdotenv;
 
 
 bool TreeDecorations::get_errored(antlr4::ParserRuleContext* ctx)

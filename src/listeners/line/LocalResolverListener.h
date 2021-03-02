@@ -9,7 +9,7 @@
 #include <string>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class LocalResolverListener final: public LineBaseListener
     {

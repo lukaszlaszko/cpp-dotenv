@@ -6,7 +6,7 @@
 #include <utility>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class escape
     {

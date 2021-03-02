@@ -1,7 +1,7 @@
 #include "ReferencesTable.h"
 
 
-using namespace dotenv;
+using namespace cppdotenv;
 
 
 ReferenceRecord::ReferenceRecord(const size_t line, const size_t pos):

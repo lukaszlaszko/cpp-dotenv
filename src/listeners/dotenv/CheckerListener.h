@@ -8,7 +8,7 @@
 #include <string>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class CheckerListener final: public DotenvBaseListener
     {

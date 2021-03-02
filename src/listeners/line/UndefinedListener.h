@@ -9,7 +9,7 @@
 #include <string>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class UndefinedListener final: public LineBaseListener
     {

@@ -3,7 +3,7 @@
 #include "errors.h"
 
 
-using namespace dotenv;
+using namespace cppdotenv;
 using namespace std;
 
 

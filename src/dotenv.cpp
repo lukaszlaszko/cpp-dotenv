@@ -8,10 +8,10 @@
 
 
 using namespace std;
-using namespace dotenv;
+using namespace cppdotenv;
 
 
-dotenv::dotenv& dotenv::dotenv::load_dotenv(const string& dotenv_path, const bool overwrite, const bool interpolate)
+cppdotenv::dotenv& cppdotenv::dotenv::load_dotenv(const string& dotenv_path, const bool overwrite, const bool interpolate)
 {
     ifstream env_file;
     env_file.open(dotenv_path);
@@ -27,19 +27,19 @@ dotenv::dotenv& dotenv::dotenv::load_dotenv(const string& dotenv_path, const boo
 }
 
 
-const dotenv::dotenv::value_type dotenv::dotenv::operator[](const key_type& k) const
+const cppdotenv::dotenv::value_type cppdotenv::dotenv::operator[](const key_type& k) const
 {
     return getenv(k).second;
 }
 
 
-dotenv::dotenv& dotenv::dotenv::instance()
+cppdotenv::dotenv& cppdotenv::dotenv::instance()
 {
     return _instance;
 }
 
 
-const string dotenv::dotenv::env_filename = ".env";
-dotenv::dotenv dotenv::dotenv::_instance;
+const string cppdotenv::dotenv::env_filename = ".env";
+cppdotenv::dotenv cppdotenv::dotenv::_instance;
 
-dotenv::dotenv& dotenv::env = dotenv::instance();
+cppdotenv::dotenv& cppdotenv::env = dotenv::instance();

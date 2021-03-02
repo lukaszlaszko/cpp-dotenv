@@ -22,18 +22,18 @@
 
 
 using namespace antlr4;
-using namespace dotenv;
+using namespace cppdotenv;
 using namespace std;
 
 
-dotenv::Parser::Parser():
+cppdotenv::Parser::Parser():
     unresolved(0)
 {
 
 }
 
 
-void dotenv::Parser::parse(istream& is, const bool overwrite, const bool interpolate)
+void cppdotenv::Parser::parse(istream& is, const bool overwrite, const bool interpolate)
 {
     // Some initialization in case a parser is reused
     unresolved = 0;
@@ -55,7 +55,7 @@ void dotenv::Parser::parse(istream& is, const bool overwrite, const bool interpo
 }
 
 
-void dotenv::Parser::parse_dotenv(istream& is, const bool overwrite)
+void cppdotenv::Parser::parse_dotenv(istream& is, const bool overwrite)
 {
     ANTLRInputStream input(is);
     DotenvLexer lexer(&input);
@@ -79,7 +79,7 @@ void dotenv::Parser::parse_dotenv(istream& is, const bool overwrite)
 }
 
 
-void dotenv::Parser::parse_line()
+void cppdotenv::Parser::parse_line()
 {
     for (const pair<string, SymbolRecord>& symbol: symbols_table)
     {
@@ -107,7 +107,7 @@ void dotenv::Parser::parse_line()
 }
 
 
-void dotenv::Parser::resolve_vars()
+void cppdotenv::Parser::resolve_vars()
 {
     // First resolve external variables, since they will all be solved on a
     // single iteration given that they are not resolved nor expanded
@@ -141,7 +141,7 @@ void dotenv::Parser::resolve_vars()
 }
 
 
-void dotenv::Parser::expand_escape()
+void cppdotenv::Parser::expand_escape()
 {
     for (const pair<string, SymbolRecord>& symbol: symbols_table)
     {
@@ -161,7 +161,7 @@ void dotenv::Parser::expand_escape()
 }
 
 
-void dotenv::Parser::register_env(const bool overwrite) const
+void cppdotenv::Parser::register_env(const bool overwrite) const
 {
     for (const pair<string, SymbolRecord>& symbol: symbols_table)
     {
@@ -177,7 +177,7 @@ void dotenv::Parser::register_env(const bool overwrite) const
 }
 
 
-void dotenv::Parser::resolve_local_vars()
+void cppdotenv::Parser::resolve_local_vars()
 {
     for (const pair<string, SymbolRecord>& symbol: symbols_table)
     {
@@ -204,7 +204,7 @@ void dotenv::Parser::resolve_local_vars()
 }
 
 
-void dotenv::Parser::resolve_external_vars()
+void cppdotenv::Parser::resolve_external_vars()
 {
     for (const pair<string, SymbolRecord>& symbol: symbols_table)
     {
@@ -231,7 +231,7 @@ void dotenv::Parser::resolve_external_vars()
 }
 
 
-void dotenv::Parser::resolve_undefined_vars()
+void cppdotenv::Parser::resolve_undefined_vars()
 {
     for (const pair<string, SymbolRecord>& symbol: symbols_table)
     {
@@ -258,7 +258,7 @@ void dotenv::Parser::resolve_undefined_vars()
 }
 
 
-void dotenv::Parser::resolve_unresolvable_vars()
+void cppdotenv::Parser::resolve_unresolvable_vars()
 {
     for (const pair<string, SymbolRecord>& symbol: symbols_table)
     {
@@ -285,7 +285,7 @@ void dotenv::Parser::resolve_unresolvable_vars()
 }
 
 
-void dotenv::Parser::report_undefined_vars()
+void cppdotenv::Parser::report_undefined_vars()
 {
     // Iterate over all the original existing references (for having access to
     // original location data)
@@ -305,7 +305,7 @@ void dotenv::Parser::report_undefined_vars()
 }
 
 
-void dotenv::Parser::report_unresolvable_vars()
+void cppdotenv::Parser::report_unresolvable_vars()
 {
     // Iterate over all the original existing references (for having access to
     // original location data)
@@ -325,7 +325,7 @@ void dotenv::Parser::report_unresolvable_vars()
 }
 
 
-void dotenv::Parser::walk_line(const string& line, tree::ParseTreeListener& listener)
+void cppdotenv::Parser::walk_line(const string& line, tree::ParseTreeListener& listener)
 {
     ANTLRInputStream input(line);
     LineLexer lexer(&input);
