@@ -8,7 +8,7 @@
 #include <vector>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class logger
     {

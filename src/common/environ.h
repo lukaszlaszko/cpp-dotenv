@@ -23,7 +23,7 @@ int setenv(const char *name, const char *value, int overwrite);
 #endif
 
 
-namespace dotenv
+namespace cppdotenv
 {
     std::pair<bool, std::string> getenv(const std::string& name);
 

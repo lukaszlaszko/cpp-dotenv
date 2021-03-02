@@ -3,7 +3,7 @@
 #include "environ.h"
 
 
-using namespace dotenv;
+using namespace cppdotenv;
 
 
 SymbolsListener::SymbolsListener(const bool overwrite, SymbolsTable& symbols_table, TreeDecorations& decorations):

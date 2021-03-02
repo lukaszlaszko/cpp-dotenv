@@ -10,7 +10,7 @@
 #include <string>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class SymbolsListener final: public DotenvBaseListener
     {

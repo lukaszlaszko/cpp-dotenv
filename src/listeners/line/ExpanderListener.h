@@ -11,7 +11,7 @@
 #include <utility>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class ExpanderListener final: public LineBaseListener
     {

@@ -9,7 +9,7 @@
 #include <vector>
 
 
-namespace dotenv
+namespace cppdotenv
 {
     class errors
     {
